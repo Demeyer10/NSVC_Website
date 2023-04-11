@@ -21,14 +21,19 @@ posts = [
 @app.route("/")
 @app.route("/home")
 def home():
-   return render_template('index.html', posts=posts)
+   return render_template('home.html', posts=posts)
 
 
 @app.route("/about")
 def about():
    return render_template('about.html', title="about")
 
+@app.route("/register")
+def register():
+   return render_template('register.html', title="register")
 
-app.run(host="0.0.0.0", port=80)
+if(__name__ == "__main__"):
+   app.run(debug=True)
+   #app.run(host="0.0.0.0", port=80)
 
 
