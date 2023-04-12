@@ -52,8 +52,8 @@ margin-bottom: 25px;
 #submitButton{
   color:#4EC2CB;
   border-color: #4EC2CB;
-  margin-top: 20px;
-width: 100px;
+  margin-top: 10px;
+  width: 100px;
 }
 
 #submitButton:hover{
@@ -61,8 +61,8 @@ width: 100px;
   background-color: #4EC2CB;
 }
 
-.paragraph{
-  margin-top: 10px;
+small{
+  margin-top: 30px;
 }
 
 #rightSideForm{

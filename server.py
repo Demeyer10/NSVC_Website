@@ -1,6 +1,10 @@
 from flask import Flask, render_template, request, url_for, flash, redirect
+from forms import registrationForm, loginForm
+
 
 app = Flask(__name__)
+
+app.config['SECRET_KEY'] = '832d1b72a3f6030c639fc41944ea3c3d'
 
 
 @app.route("/")
@@ -12,16 +16,17 @@ def home():
 def about():
    return render_template('about.html', title="about")
 
-@app.route("/register", methods=('GET', 'POST'))
+@app.route("/register", methods=['GET', 'POST'])
 def register():
-   # Textfield names: name, email, password, confirmPassword
-   if request.method == "POST":
-      if request.form['password'] != request.form['confirmPassword']:
-         return render_template('register.html', title="register", error="is-invalid", errorMsg="Password must match", inputName=request.form['name'], inputEmail=request.form['email'])
-      # redirect when inputs are valid
-      return redirect('/', code=302)
-      #print(request.form['name'])
-   return render_template('register.html', title="register")
+   form = registrationForm()
+   if form.validate_on_submit():
+       flash(f'Account create for {form.name.data}!', 'success')
+       return redirect(url_for('home'))
+   return render_template('register.html', title="register", form=form)
+
+@app.route("/login", methods=['GET', 'POST'])
+def login():
+      return render_template('home.html')
 
 if(__name__ == "__main__"):
    app.run(port=8000, debug=True)
