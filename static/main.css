@@ -33,7 +33,7 @@ h1, h2, h3, h4, h5, h6 {
   padding-top: 50px;
   padding-left: 40px;
   padding-right: 40px;
-  margin-left: 10%;
+  margin-left: 5%;
   box-shadow: -5px 0px 10px 2px rgba(0,0,0,0.3);
 
 }
@@ -78,7 +78,7 @@ small{
 @media only screen and (max-width: 770px) {
   #form-field{
     border-radius: 5% 5% 5% 5%;
-    margin-left: 2%;
+    margin-left: -15px;
   }
 }
 

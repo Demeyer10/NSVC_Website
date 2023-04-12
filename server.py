@@ -24,12 +24,14 @@ def register():
        return redirect(url_for('home'))
    return render_template('register.html', title="register", form=form)
 
+
 @app.route("/login", methods=['GET', 'POST'])
 def login():
       return render_template('home.html')
 
 if(__name__ == "__main__"):
-   app.run(port=8000, debug=True)
+   #app.run(host='137.21.145.253', debug=True)
+   app.run(port=80, debug=True)
    #app.run(host="0.0.0.0", port=80)
 
 
