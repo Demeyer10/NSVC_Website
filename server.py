@@ -27,7 +27,8 @@ def register():
 
 @app.route("/login", methods=['GET', 'POST'])
 def login():
-      return render_template('home.html')
+      form = loginForm()
+      return render_template('login.html', title="login", form=form)
 
 if(__name__ == "__main__"):
    #app.run(host='137.21.145.253', debug=True)
