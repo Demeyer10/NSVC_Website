@@ -26,7 +26,8 @@ def register():
 
 @app.route("/login", methods=['GET', 'POST'])
 def login():
-      return render_template('home.html')
+      form = loginForm()
+      return render_template('login.html', title="login", form=form)
 
 if(__name__ == "__main__"):
    app.run(port=8000, debug=True)

@@ -54,6 +54,7 @@ margin-bottom: 25px;
   border-color: #4EC2CB;
   margin-top: 10px;
   width: 100px;
+  margin-bottom: 15px;
 }
 
 #submitButton:hover{
@@ -67,7 +68,7 @@ small{
 
 #rightSideForm{
   height: 600px;
-  border-radius: 0% 5% 5% 0%;
+  border-radius: 0px 20px 20px 0px;
   box-shadow: 5px 0px 10px 2px rgba(0,0,0,0.3);
   background-repeat: no-repeat;
   background-size: cover;
@@ -75,12 +76,45 @@ small{
   background-image: url("/static/img/BeachVault3.png");
 }
 
-@media only screen and (max-width: 770px) {
-  #form-field{
-    border-radius: 5% 5% 5% 5%;
-    margin-left: 2%;
-  }
-}
 
 /*SIGN IN PAGE*/
 
+#form-field-login{  
+  border-radius: 20px 0px 0px 20px;
+  height: 600px;
+  padding-top: 85px;
+  padding-left: 40px;
+  padding-right: 40px;
+  margin-left: 10%;
+  box-shadow: -5px 0px 10px 2px rgba(0,0,0,0.3);
+}
+
+#rightSideForm-login{
+  height: 600px;
+  border-radius: 0px 20px 20px 0px;
+  box-shadow: 5px 0px 10px 2px rgba(0,0,0,0.3);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;;
+  background-image: url("/static/img/Alexvault.png");
+}
+
+
+
+
+
+/*RESPONSIVE DESIGN MOBILE*/
+@media only screen and (max-width: 770px) {
+  #form-field{
+    border-radius: 20px 20px 20px 20px;
+    margin-left: 2%;
+    box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.3);
+  }
+
+  #form-field-login{
+    border-radius: 20px 20px 20px 20px;
+    margin-left: 2%;
+    box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.3);
+  }
+
+}
