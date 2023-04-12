@@ -16,6 +16,10 @@ def home():
 def about():
    return render_template('about.html', title="about")
 
+@app.route("/staff")
+def staff():
+    return render_template('staff.html', title="staff")
+
 @app.route("/register", methods=['GET', 'POST'])
 def register():
    form = registrationForm()
