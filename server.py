@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, url_for, flash, redirect
 from forms import registrationForm, loginForm
-
+from database import get_db_connection, insert_db
 
 app = Flask(__name__)
 
@@ -10,6 +10,10 @@ app.config['SECRET_KEY'] = '832d1b72a3f6030c639fc41944ea3c3d'
 @app.route("/")
 @app.route("/home")
 def home():
+   conn = get_db_connection()
+   users = conn.execute('SELECT * FROM users')
+   for user in users:
+       print(user['id'])
    return render_template('home.html')
 
 @app.route("/about")
@@ -24,6 +28,7 @@ def staff():
 def register():
    form = registrationForm()
    if form.validate_on_submit():
+       insert_db('users', 'user_name, user_email, user_password',(form.name.data, form.email.data, form.password.data))
        flash(f'Account create for {form.name.data}!', 'success')
        return redirect(url_for('home'))
    return render_template('register.html', title="register", form=form)
